@@ -30,18 +30,8 @@ client.on('message', (event) => {
     return;
   }
 
-  if (event.content.includes('мариса')) {
-    event.sender.channel.sendMessage('Чё? Юзай !help');
-    return;
-  }
-
-  if (event.content.includes('Мариса')) {
-    event.sender.channel.sendMessage('Чё? Юзай !help');
-    return;
-  }
-
-  if (event.content.includes('marisa')) {
-    event.sender.channel.sendMessage('Чё? Юзай !help');
+  if (event.content.includes('мариса') || event.content.includes('Мариса') || event.content.includes('marisa')) {
+    event.sender.channel.sendMessage('Сосал? Юзай !help');
     return;
   }
 });
