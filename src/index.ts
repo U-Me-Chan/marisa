@@ -23,10 +23,10 @@ client.on('ready', () => {
   console.log('Client ready');
 });
 
-client.on('message', (event) => {
+client.on('message', async (event) => {
   const commandKey = helpCommandsOrder.find((commandKey) => processorsCheckers[commandKey](event.content));
   if (commandKey) {
-    event.sender.channel.sendMessage(processors[commandKey](event.content, event.sender.name));
+    event.sender.channel.sendMessage(await processors[commandKey](event.content, event.sender.name, (msg) => event.sender.channel.sendMessage(msg)));
     return;
   }
 
